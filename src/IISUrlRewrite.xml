@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule name="Rewrite for old v12 urls">
+                    <match url=".*" />
+                    <conditions>
+                        <add input="{{REQUEST_URI}}" matchType="Pattern" pattern="^https://www.mcbeev.com/blog/(.+)/(.+)" ignoreCase="true" negate="false" />
+                    </conditions>
+                    <action type="Rewrite" url="/{C:2}" appendQueryString="false" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<import>
+  <target folder="C:\inetpub\wwwroot\Kentico13_4" type="Documents" sitename="DancingGoatCore" classname="DancingGoatCore.Article" fkmappings="C:\Users\bmckeiver\Documents\allNodes.fkmap" importasproducts="False" autopublish="True" updateifexists="True" skipifexists="False">
+    <location source="/articles" />
+  </target>
+  <source type="XML" file="C:\ClientProjects\Kentico-Xperience-Content-Extractor\src\Generated\CMS.BlogPost\allNodes.xml" tablename="cms-blogpost" />
+  <mappings>
+    <mapping target="issecurednode" />
+    <mapping target="articlesummary" source="blogpostsummary" />
+    <mapping target="nodecustomdata" />
+    <mapping target="documentabtestconfiguration" />
+    <mapping target="documentworkflowactionstatus" />
+    <mapping target="documenttaggroupid" />
+    <mapping target="nodeskuid" />
+    <mapping target="documentcontent" />
+    <mapping target="nodeid" />
+    <mapping target="documentskuname" />
+    <mapping target="documentpublishfrom" />
+    <mapping target="documentcreatedwhen" />
+    <mapping target="documentpagebuilderwidgets" />
+    <mapping target="documentskudescription" />
+    <mapping target="documentpagetitle" source="blogposttitle" />
+    <mapping target="nodeguid" />
+    <mapping target="documentcreatedbyuserid" />
+    <mapping target="articleid" />
+    <mapping target="documentsearchexcluded" default="false" />
+    <mapping target="documentculture" default="en-US" />
+    <mapping target="documentskushortdescription" />
+    <mapping target="documentisarchived" default="false" />
+    <mapping target="documentiswaitingfortranslation" default="false" />
+    <mapping target="articletext" source="blogpostbody" />
+    <mapping target="nodehaslinks" default="false" />
+    <mapping target="documentname" />
+    <mapping target="nodeowner" />
+    <mapping target="documentcustomdata" />
+    <mapping target="documenttags" source="documenttags" />
+    <mapping target="documentid" />
+    <mapping target="documentpagetemplateconfiguration" />
+    <mapping target="articleteaser" source="blogpostteaser" />
+    <mapping target="documentmodifiedwhen" />
+    <mapping target="nodeoriginalnodeid" />
+    <mapping target="documentguid" />
+    <mapping target="documentshowinmenu" default="False" />
+    <mapping target="documentmodifiedbyuserid" />
+    <mapping target="nodealiaspath" />
+    <mapping target="documentcanbepublished" default="True" />
+    <mapping target="documentpagekeywords" />
+    <mapping target="articlerelatedarticles" />
+    <mapping target="nodealias" source="newaliaspath" />
+    <mapping target="articletitle" source="blogposttitle" default="{% ArticleTitle %}" />
+    <mapping target="nodeorder" />
+    <mapping target="documentlastversionnumber" />
+    <mapping target="documentpublishto" />
+    <mapping target="nodeisaclowner" default="False" />
+    <mapping target="documentpagedescription" />
+    <mapping target="nodelinkednodesiteid" />
+    <mapping target="documentworkflowcycleguid" />
+  </mappings>
+</import>

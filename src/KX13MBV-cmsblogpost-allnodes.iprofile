@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<import>
+  <target folder="\\client-web-03\e$\Inetpub" type="Documents" sitename="MBV" classname="McBeev.ArticleNode" fkmappings="C:\Users\bmckeiver\Documents\allNodes.fkmap" importasproducts="False" autopublish="True" updateifexists="True" skipifexists="False">
+    <location source="/articles" />
+  </target>
+  <source type="XML" file="C:\ClientProjects\Kentico-Xperience-Content-Extractor\src\Generated\CMS.BlogPost\allNodes.xml" tablename="cms-blogpost" />
+  <mappings>
+    <mapping target="opengraphimage" />
+    <mapping target="opengraphtitle" source="blogposttitle" />
+    <mapping target="documentcontent" />
+    <mapping target="documentcanbepublished" default="True" />
+    <mapping target="documentskuname" />
+    <mapping target="documentworkflowactionstatus" />
+    <mapping target="documentcreatedbyuserid" />
+    <mapping target="nodeskuid" />
+    <mapping target="nodeid" />
+    <mapping target="authorguid" default="ABB32737-49D6-4162-BD70-215D2AF8D9A7" />
+    <mapping target="opengraphvideo" />
+    <mapping target="issecurednode" />
+    <mapping target="articlenodeid" />
+    <mapping target="documentpublishfrom" source="blogpostdate" />
+    <mapping target="documentcreatedwhen" />
+    <mapping target="documentpagebuilderwidgets" />
+    <mapping target="summary" source="newblogpostsummary" />
+    <mapping target="documentpagetitle" source="blogposttitle" />
+    <mapping target="nodeguid" />
+    <mapping target="documenttaggroupid" />
+    <mapping target="nodecustomdata" />
+    <mapping target="nodehaslinks" default="false" />
+    <mapping target="documentabtestconfiguration" />
+    <mapping target="documentsearchexcluded" default="false" />
+    <mapping target="documentculture" default="en-US" />
+    <mapping target="documentskushortdescription" />
+    <mapping target="documentisarchived" default="false" />
+    <mapping target="documentiswaitingfortranslation" default="false" />
+    <mapping target="documentworkflowcycleguid" />
+    <mapping target="documentname" source="blogposttitle" />
+    <mapping target="nodeowner" />
+    <mapping target="documentcustomdata" />
+    <mapping target="documenttags" source="documenttags" />
+    <mapping target="opengraphdescription" />
+    <mapping target="documentid" />
+    <mapping target="documentpagetemplateconfiguration" />
+    <mapping target="documentmodifiedwhen" />
+    <mapping target="nodeoriginalnodeid" />
+    <mapping target="documentguid" />
+    <mapping target="documentshowinmenu" default="False" />
+    <mapping target="documentmodifiedbyuserid" />
+    <mapping target="nodealiaspath" source="newaliaspath" />
+    <mapping target="thumbnailimage" source="blogpostthumb" />
+    <mapping target="documentpagekeywords" />
+    <mapping target="content" source="blogpostbody" />
+    <mapping target="nodealias" source="newaliaspath" />
+    <mapping target="documentskudescription" />
+    <mapping target="nodeorder" />
+    <mapping target="documentlastversionnumber" />
+    <mapping target="documentpublishto" />
+    <mapping target="nodeisaclowner" default="False" />
+    <mapping target="documentpagedescription" />
+    <mapping target="nodelinkednodesiteid" />
+  </mappings>
+</import>
