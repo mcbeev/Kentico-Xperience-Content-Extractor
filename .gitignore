@@ -447,4 +447,5 @@ $RECYCLE.BIN/
 ## Kentico Xperience Content Extractor 
 ## generated data directory for the resulting xml files
 ##
-Generated/
+src/Generated/
+database/kentico12-pe.bak
