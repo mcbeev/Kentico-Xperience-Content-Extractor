@@ -19,7 +19,7 @@ This app runs on .NET 4.7.2 and requires the .NET 4.7.2. It also assumes you hav
 Setup only requires a few simple steps.
 
 - Clone or fork the repo.
-- Restore the `.bak` file from the `/database` folder or use your own Kentico 12 database.
+- Extract and Restore the `.bak.zip` file from the `/database` folder or use your own Kentico 12 database.
 - Update the main app.config `CMSConnectionString` for the console app to talk to the database.
   - Reminder: it is up to you to make sure security is correct from a SQL connection standpoint.
 - Update the main app.config `CMSHashStringSalt` to your main Kentico 12 project's HashtringSalt value
