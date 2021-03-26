@@ -25,7 +25,7 @@ namespace XperienceContentXtractor.Commands
     public class Extractor
     {
 
-        [Argument(0, Description = "Config file with the settings used to Xtract from Xperience" )]
+        [Argument( 0, Description = "Config file with the settings used to Xtract from Xperience" )]
         [Required]
         public string Config { get; set; }
 
@@ -54,8 +54,8 @@ namespace XperienceContentXtractor.Commands
             try
             {
                 Extract( console, settings );
-            } 
-            catch (CMS.DataEngine.ApplicationInitException ex)
+            }
+            catch( CMS.DataEngine.ApplicationInitException ex )
             {
                 console.ForegroundColor = ConsoleColor.DarkRed;
                 console.WriteLine();
@@ -70,7 +70,7 @@ namespace XperienceContentXtractor.Commands
             var redirects = new List<(string, string)>();
 
             // Create the output directories if needed
-            if (!DryRun)
+            if( !DryRun )
             {
                 PrepareObjectDirectory( settings );
             }
@@ -296,7 +296,7 @@ namespace XperienceContentXtractor.Commands
                     xmlDocument.AppendChild( parentElem );
                 }
 
-                if (!DryRun)
+                if( !DryRun )
                 {
                     WriteRedirects( redirects, settings );
                     xmlDocument.Save( Path.Combine( settings.ObjectDirectory, settings.PageType, settings.AllNodesFilename ) );
@@ -312,9 +312,9 @@ namespace XperienceContentXtractor.Commands
 
         private void PrepareObjectDirectory( ExtractorSettings settings )
         {
-            if( Clean && Directory.Exists(settings.ObjectDirectory))
+            if( Clean && Directory.Exists( settings.ObjectDirectory ) )
             {
-                Directory.Delete( settings.ObjectDirectory );
+                Directory.Delete( settings.ObjectDirectory, true );
             }
 
             if( !Directory.Exists( settings.ObjectDirectory ) )
