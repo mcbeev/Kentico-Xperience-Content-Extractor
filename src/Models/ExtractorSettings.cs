@@ -37,15 +37,6 @@ namespace XperienceContentXtractor.Models
 
         public string XperienceUser { get; set; } = "administrator";
 
-        //  //TODO - Move into CLI parameters
-        //  var nodeOrder = 1;
-        //  var dataRootDirectoryName = "Generated";
-        //  var pageTypeNameIdentifier = "CMS.BlogPost";
-        //  var pageTypeColumns = new string []{"NodeAliasPath", "BlogPostTitle", "BlogPostDate", "BlogPostSummary", "BlogPostBody", "BlogPostTeaser", "BlogPostThumb", "DocumentTags", "KenticoRocksFile"};
-        //  var orderByString = "[BlogPostDate] ASC";
-        //  var topN = 500;
-        //  var contentPathToStart = "/blog";
-
     }
 
 }
