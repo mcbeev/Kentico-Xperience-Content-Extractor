@@ -30,7 +30,7 @@ namespace XperienceContentXtractor.Commands
 
                 await WriteConfigAsync( settings );
             }
-            catch (ValidationException ex)
+            catch( ValidationException ex )
             {
                 console.ForegroundColor = ConsoleColor.DarkRed;
                 console.WriteLine();
@@ -39,41 +39,41 @@ namespace XperienceContentXtractor.Commands
             }
         }
 
-        private static ExtractorSettings GenerateConfigSettings()
+        private static ExtractorSettings GenerateConfigSettings( )
         {
             var settings = new ExtractorSettings();
 
-            settings.AbsoluteSiteName = Prompt.GetString( $"Fully qualified target website URL?", promptColor: ConsoleColor.DarkMagenta );
-            settings.AllNodesFilename = Prompt.GetString( $"All Nodes Xml export filename?", settings.AllNodesFilename, ConsoleColor.DarkMagenta );
-            settings.AllRedirectsFilename = Prompt.GetString( $"Redirect Xml export filename?", settings.AllRedirectsFilename, ConsoleColor.DarkMagenta );
-            settings.ConnectionString = Prompt.GetString( "Xperience database connection string?", promptColor: ConsoleColor.DarkMagenta );
-            settings.HashStringSalt = Prompt.GetString( "Xperience database hash string salt?", promptColor: ConsoleColor.DarkMagenta );
-            settings.ObjectDirectory = Prompt.GetString( $"Object (export) directory?", settings.ObjectDirectory, ConsoleColor.DarkMagenta );
-            settings.RootNodeAliasPath = Prompt.GetString( $"Root node/folder alias path in the tree?", settings.RootNodeAliasPath, ConsoleColor.DarkMagenta );
+            settings.AbsoluteSiteName = Prompt.GetString( $"Fully qualified target website URL:", promptColor: ConsoleColor.DarkMagenta );
+            settings.AllNodesFilename = Prompt.GetString( $"\"All Nodes\" Xml Filename?", settings.AllNodesFilename, ConsoleColor.DarkMagenta );
+            settings.AllRedirectsFilename = Prompt.GetString( $"\"IIS Redirects\" Xml Filename:", settings.AllRedirectsFilename, ConsoleColor.DarkMagenta );
+            settings.ConnectionString = Prompt.GetString( "Connection String:", promptColor: ConsoleColor.DarkMagenta );
+            settings.HashStringSalt = Prompt.GetString( "Hash String Salt:", promptColor: ConsoleColor.DarkMagenta );
+            settings.ObjectDirectory = Prompt.GetString( $"Object (export) directory:", settings.ObjectDirectory, ConsoleColor.DarkMagenta );
+            settings.RootNodeAliasPath = Prompt.GetString( $"Root \"NodeAliasPath\":", settings.RootNodeAliasPath, ConsoleColor.DarkMagenta );
 
             var defaultOrderByColumns = string.Join( ", ", settings.OrderByColumns );
-            settings.OrderByColumns = Prompt.GetString( $"Columns used to order the nodes as a comma-separated list?", defaultOrderByColumns, ConsoleColor.DarkMagenta )
+            settings.OrderByColumns = Prompt.GetString( $"OrderBy Columns (comma-delimited):", defaultOrderByColumns, ConsoleColor.DarkMagenta )
                 .Split( ',' )
                 .Select( s => s.Trim() )
                 .ToArray();
 
-            var pageType = Prompt.GetString( "Xperience page type name?", promptColor: ConsoleColor.DarkMagenta );
+            var pageType = Prompt.GetString( "PageType:", promptColor: ConsoleColor.DarkMagenta );
             settings.PageType = pageType;
-            settings.PageTypeColumns = (Prompt.GetString( "Xperience page type columns as a comma-separated list?", promptColor: ConsoleColor.DarkMagenta ) ?? string.Empty)
+            settings.PageTypeColumns = ( Prompt.GetString( "PageType Columns (comma-delimited):", promptColor: ConsoleColor.DarkMagenta ) ?? string.Empty )
                 .Split( ',' )
                 .Select( s => s.Trim() )
                 .ToArray();
 
-            settings.TopN = Prompt.GetInt( $"Limit to N nodes?", settings.TopN, ConsoleColor.DarkMagenta );
-            settings.XperienceUser = Prompt.GetString( $"Xperience username used to connect?", settings.XperienceUser, ConsoleColor.DarkMagenta );
+            settings.TopN = Prompt.GetInt( $"Count:", settings.TopN, ConsoleColor.DarkMagenta );
+            settings.XperienceUser = Prompt.GetString( $"Xperience User name:", settings.XperienceUser, ConsoleColor.DarkMagenta );
 
             return settings;
         }
 
         private async Task WriteConfigAsync( ExtractorSettings settings )
         {
-            using var f = new FileStream( Output, FileMode.Create );
-            await JsonSerializer.SerializeAsync( f, settings, new JsonSerializerOptions { WriteIndented = true } );
+            using var file = new FileStream( Output, FileMode.Create );
+            await JsonSerializer.SerializeAsync( file, settings, new JsonSerializerOptions { WriteIndented = true } );
         }
     }
 }

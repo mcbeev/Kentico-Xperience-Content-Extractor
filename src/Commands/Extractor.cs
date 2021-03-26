@@ -51,7 +51,18 @@ namespace XperienceContentXtractor.Commands
             var settings = await JsonSerializer.DeserializeAsync<ExtractorSettings>( file );
             EnsureValidSettings( settings );
 
-            Extract( console, settings );
+            try
+            {
+                Extract( console, settings );
+            } 
+            catch (CMS.DataEngine.ApplicationInitException ex)
+            {
+                console.ForegroundColor = ConsoleColor.DarkRed;
+                console.WriteLine();
+                console.WriteLine( ex.Message );
+                console.WriteLine( "Please verify your connection string and hash string salt" );
+                console.ResetColor();
+            }
         }
 
         private void Extract( IConsole console, ExtractorSettings settings )
@@ -89,6 +100,9 @@ namespace XperienceContentXtractor.Commands
                     .Published()
                     .TopN( settings.TopN )
                     .OrderBy( settings.OrderByColumns );
+
+                console.WriteLine( $"{posts.Count} nodes found." );
+                console.WriteLine( "Exporting node data..." );
 
                 int nodeOrder = 1;
                 foreach( TreeNode post in posts )
@@ -132,9 +146,6 @@ namespace XperienceContentXtractor.Commands
                     orderNode.InnerHtml = nodeOrder.ToString();
                     rootNode.AppendChild( orderNode );
                     nodeOrder++;
-
-                    console.WriteLine( $"{posts.Count} nodes found." );
-                    console.WriteLine( "Exporting node data..." );
 
                     //Kentico dynamic properties or "With the Coupled Columns of the page type"
                     //Iterate through all of the fields of a document in order to serialize them to xml

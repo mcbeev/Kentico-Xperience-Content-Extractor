@@ -30,7 +30,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>
       $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
     </AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <AssemblyName>XperienceContentXtractor</AssemblyName>
+    <AssemblyName>xp-ext</AssemblyName>
     <RootNamespace>XperienceContentXtractor</RootNamespace>
   </PropertyGroup>
 

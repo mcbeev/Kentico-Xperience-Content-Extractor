@@ -35,7 +35,7 @@ namespace XperienceContentXtractor.Models
         [Range( 1, int.MaxValue )]
         public int TopN { get; set; } = int.MaxValue;
 
-        public string XperienceUser { get; set; } = "Administrator";
+        public string XperienceUser { get; set; } = "administrator";
 
         //  //TODO - Move into CLI parameters
         //  var nodeOrder = 1;
