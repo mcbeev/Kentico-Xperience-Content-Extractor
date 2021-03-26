@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "XperienceContentExtractor": {
+      "commandName": "Project",
+      "commandLineArgs": "generate --output test.json"
+    }
+  }
+}
