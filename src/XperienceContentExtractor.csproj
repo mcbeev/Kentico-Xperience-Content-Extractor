@@ -1,9 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>XperienceContentExtXtrascctor</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Extensions\NewFile1.txt" />
+    <None Remove="NewFile1.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="app.config" />
@@ -21,11 +30,15 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>
       $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
     </AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <AssemblyName>xp-ext</AssemblyName>
+    <RootNamespace>XperienceContentXtractor</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
     <PackageReference Include="Kentico.Libraries" Version="[12.0.0, 12.1.0)" />
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.1.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
